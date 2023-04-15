@@ -1,0 +1,34 @@
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.user__head {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: white;
+}
+
+.user__body {
+    width: 60px;
+    height: 30px;
+    border-radius: 50px 50px 10px 10px;
+    background: white;
+    position: relative;
+}
+
+.username {
+    text-align: center;
+}
+
+.plus, .plus > * {
+    width: 40px;
+    height: 40px;
+}

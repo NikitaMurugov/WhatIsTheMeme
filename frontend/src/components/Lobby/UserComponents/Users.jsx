@@ -1,5 +1,4 @@
 import User from "./User";
-import PlusUser from "./PlusUser";
 
 const Users = ({list}) => {
     return <>

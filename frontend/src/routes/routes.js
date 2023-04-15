@@ -5,7 +5,7 @@ const routes = [
         path: '/', element: <App />,
     },
     {
-        path: '/lobby/:id', element: <Lobby />,
+        path: '/lobby/:code', element: <Lobby />,
     },
 ]
 export default routes

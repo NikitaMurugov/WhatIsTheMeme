@@ -5,13 +5,13 @@ const Users = ({list}) => {
     return <>
         <div className="w-fit">
             <div
-                className={'grid w-10/12 gap-4'}
+                className={'grid w-10/12 gap-10'}
                 style={{
-                    gridTemplateColumns: `repeat(${list.length + 1}, 140px)`
+                    gridTemplateColumns: `repeat(${list.length}, 140px)`
                 }}
             >
                 {list.map((user, i) => <User user={user} key={i + user.name} />)}
-                <PlusUser />
+                {/*<PlusUser />*/}
             </div>
 
         </div>

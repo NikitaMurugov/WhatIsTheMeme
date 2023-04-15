@@ -3,11 +3,11 @@ import UserCards from "./UserCards";
 
 const User = ({user}) => {
     return <>
-        <div>
+        <div className=" hover:scale-110 transition">
             <div className="userCards flex gap-2 items-center mb-2 ">
                 <UserCards cards={user.cards} />
             </div>
-            <div className={'userContainer items-center  hover:scale-110 transition'}>
+            <div className={'userContainer items-center '}>
                 <div className={'user'}>
                     <div className={'user__head'}></div>
                     <div className={'user__body'} style={{

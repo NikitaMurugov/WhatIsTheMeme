@@ -4,10 +4,7 @@ import { GiRoundStar } from "react-icons/gi";
 
 const User = ({user}) => {
     return <>
-        <div className=" hover:scale-110 transition">
-            <div className="userCards flex gap-2 items-center mb-6 ">
-                <UserCards cards={user.cards} />
-            </div>
+        <div className="w-fit hover:scale-110 transition cursor-default">
             <div className={'userContainer items-center '}>
                 <div className={'user'}>
                     <div className={'user__head'}>
@@ -18,10 +15,10 @@ const User = ({user}) => {
                 </div>
 
                 {/*<hr className={`w-10/12 h-0.5 border-none bg-white opacity-10 rounded`}/>*/}
-                <div className={'username text-white'}>
-                    {user.name}
-                </div>
                 {user.maintainer && <GiRoundStar color={"#fca32f"} width={'100%'} height={'100%'}/>}
+                <div className={'username text-white'}>
+                    {user.name.split(' ')[0]}
+                </div>
             </div>
         </div>
     </>

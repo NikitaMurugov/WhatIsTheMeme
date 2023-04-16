@@ -1,139 +1,34 @@
 import {useParams} from "react-router-dom";
-import Users from "../components/Lobby/UserComponents/Users";
+import {useState} from "react";
+import { BiCopy } from "react-icons/bi"
+
+import 'react-toastify/dist/ReactToastify.css';
+
+import Footer from "../components/Lobby/PageCompoents/Footer";
+
+import fakeUsers from "../helpers/fakeUserList";
+import Header from "../components/Lobby/PageCompoents/Header";
 
 function Lobby() {
+    const [spectator, setSpectator] = useState(true);
     const params = useParams();
-    const lobbyCode = params.code
-    const users = [
-        {
-            name: 'Антоним',
-            skinColor: '#f7a352',
-            maintainer: false,
-            cards: [
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-            ]
-        },
-        {
-            name: 'Енакентий Третий',
-            skinColor: '#52a6f7',
-            maintainer: false,
-            cards: [
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-            ]
-        },
-        {
-            name: 'Абдулахмед Самфаровдух',
-            skinColor: '#96a47c',
-            maintainer: false,
-            cards: [
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-            ]
-        },
-        {
-            name: 'Маргарита ИЧОковна',
-            skinColor: '#8a7ca4',
-            maintainer: false,
-            cards: [
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-            ]
-        },
-        {
-            name: 'Вася пук',
-            skinColor: '#3aec97',
-            maintainer: true,
-            cards: [
-                {
-                    active: true,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-                {
-                    active: false,
-                    img: '',
-                },
-            ]
-        },
-    ]
+    const lobbyCode = params.code;
+    const users = fakeUsers;
+
     return <>
         <div className="App font-basic">
-            <header className="flex justify-between w-full p-4">
-                <div>
-                    <span className="text-white ">lobby-code: {lobbyCode}</span>
-                </div>
-                <span className="text-white ">хозяин лобби: <b>Вася пук</b></span>
-            </header>
+            <Header
+                lobbyCode={lobbyCode}
+                spectator={spectator}
+                setSpectator={setSpectator}
+            />
             <main></main>
-            <footer className={"flex justify-center absolute bottom-10 w-full"}>
-                <Users list={users} />
-            </footer>
+            <Footer
+                spectator={spectator}
+                users={users}
+            />
         </div>
     </>;
 }
+
 export default Lobby

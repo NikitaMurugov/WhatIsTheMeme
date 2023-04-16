@@ -1,16 +1,17 @@
+import PlusUser from "./PlusUser";
 import User from "./User";
 
 const Users = ({list}) => {
     return <>
-        <div className="w-fit">
+        <div className="">
             <div
-                className={'grid w-10/12 gap-10'}
+                className={'grid w-10/12 gap-6'}
                 style={{
-                    gridTemplateColumns: `repeat(${list.length}, 140px)`
+                    gridTemplateRows: `repeat(${list.length + 1}, 30px)`
                 }}
             >
                 {list.map((user, i) => <User user={user} key={i + user.name} />)}
-                {/*<PlusUser />*/}
+                <PlusUser />
             </div>
 
         </div>

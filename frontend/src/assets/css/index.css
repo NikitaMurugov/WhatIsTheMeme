@@ -6,3 +6,7 @@
     height: 100vh;
     background: #2a2a2a;
 }
+.header__user-role > svg {
+    width: 30px;
+    height: 30px;
+}

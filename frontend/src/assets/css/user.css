@@ -1,32 +1,59 @@
-.userContainer {
+.userContainer_spectator {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.user {
+.userContainer {
+    display: flex;
+    gap: 10px;
+}
+.user, .user_spectator {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 5px;
 }
-.user__head {
+.user {
+    gap: 1px;
+}
+.user__head_spectator {
     width: 35px;
     height: 35px;
     border-radius: 100%;
     background: white;
 }
 
-.user__body {
+.user__body_spectator {
     width: 60px;
     height: 30px;
     border-radius: 50px 50px 10px 10px;
     background: white;
 }
-.username {
+.username_spectator {
     text-align: center;
 }
+.username {
+    width:fit-content;
+}
+.user__head {
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background: white;
+}
 
-.plus, .plus > * {
+.user__body {
+    width: 20px;
+    height: 12px;
+    border-radius: 10px 10px 1px 1px;
+    background: white;
+}
+
+.plus_spectator, .plus_spectator > * {
     width: 40px;
     height: 40px;
+}
+.plus, .plus > * {
+    width: 20px;
+    height: 20px;
 }

@@ -6,7 +6,7 @@ const PlusUser = ({onClick}) => {
             <div className="plus_spectator">
                 <RxPlusCircled color={'white'} width={'100%'} height={'100%'} />
             </div>
-            <div className="username text-white">
+            <div className="username ">
                 позвать друга
             </div>
         </div>

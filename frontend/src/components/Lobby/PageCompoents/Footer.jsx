@@ -13,7 +13,12 @@ const Footer = ({spectator, users}) => {
     const Footer = <>
         <footer className={"grid grid-cols-footer absolute bottom-0 w-full p-10"}>
             <Users list={users}/>
-            <MemeCardsOnHand />
+            <div className={'flex flex-col justify-center'}>
+                <div className={'flex justify-center mb-10'}>
+                    Самое время сделать свой выбор!
+                </div>
+                <MemeCardsOnHand />
+            </div>
         </footer>
     </>
 

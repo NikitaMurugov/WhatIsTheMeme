@@ -18,7 +18,7 @@ const UserSpectator = ({user}) => {
                 </div>
 
                 {/*<hr className={`w-10/12 h-0.5 border-none bg-white opacity-10 rounded`}/>*/}
-                <div className={'username_spectator text-white'}>
+                <div className={'username_spectator'}>
                     {user.name}
                 </div>
                 {user.maintainer && <GiRoundStar color={"#fca32f"} width={'100%'} height={'100%'}/>}

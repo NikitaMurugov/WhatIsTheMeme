@@ -35,7 +35,7 @@ function Lobby() {
         });
     }, []);
     return <>
-        <div className="App font-basic">
+        <div className="App font-basic text-white">
 
             <canvas id={"bg"}></canvas>
             <Header
@@ -43,7 +43,14 @@ function Lobby() {
                 spectator={spectator}
                 setSpectator={setSpectator}
             />
-            <main></main>
+            <main className={"grid grid-cols-footer"}>
+                <div></div>
+                <div className={"flex flex-col items-center"}>
+                    <span className={'text-4xl flex justify-center'}>Какая-то фраза</span>
+                    <hr className={"w-1/2 m-10 h-1 border-none bg-gray-500 rounded"}/>
+                </div>
+                <div></div>
+            </main>
             <Footer
                 spectator={spectator}
                 users={users}

@@ -15,7 +15,7 @@ const User = ({user}) => {
 
                 {/*<hr className={`w-10/12 h-0.5 border-none bg-white opacity-10 rounded`}/>*/}
                 {user.maintainer && <GiRoundStar color={"#fca32f"} width={'100%'} height={'100%'}/>}
-                <div className={'username text-white'}>
+                <div className={'username '}>
                     {user.name.split(' ')[0]}
                 </div>
             </div>

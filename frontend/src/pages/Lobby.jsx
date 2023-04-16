@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
-import {useState} from "react";
-import { BiCopy } from "react-icons/bi"
+import {useEffect, useState} from "react";
+import Granim from "granim";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,8 +15,30 @@ function Lobby() {
     const lobbyCode = params.code;
     const users = fakeUsers;
 
+    useEffect(() => {
+
+        new Granim({
+            element: "#bg",
+            direction: "left-right",
+            opacity: [1, 1],
+            states: {
+                "default-state": {
+                    gradients: [
+                        ["#232323", "#3d3d3d"],
+                        ["#3d3d3d", "#3b4364"],
+                        ["#363636", "#2f2f2f"],
+                        ["#2f2f2f", "#232323"],
+                        ["#2f324d", "#2f2f2f"],
+                    ],
+                    transitionSpeed: 2000
+                }
+            }
+        });
+    }, []);
     return <>
         <div className="App font-basic">
+
+            <canvas id={"bg"}></canvas>
             <Header
                 lobbyCode={lobbyCode}
                 spectator={spectator}

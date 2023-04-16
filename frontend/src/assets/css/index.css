@@ -1,10 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+* {
+    z-index: 1;
+}
 #root {
     height: 100vh;
     background: #2a2a2a;
+}
+#bg {
+    position: fixed;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.font-basic {
+    z-index: 1;
 }
 .header__user-role > svg {
     width: 30px;

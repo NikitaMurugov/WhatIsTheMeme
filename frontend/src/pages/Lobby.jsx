@@ -14,7 +14,6 @@ function Lobby() {
     const params = useParams();
     const lobbyCode = params.code;
     const users = fakeUsers;
-
     useEffect(() => {
 
         new Granim({

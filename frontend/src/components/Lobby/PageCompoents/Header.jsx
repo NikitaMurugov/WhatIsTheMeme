@@ -25,11 +25,11 @@ const Header = ({lobbyCode, setSpectator, spectator}) => {
                 <span className="text-white flex items-center">
                     lobby-code:
                     <b
-                        className={"ml-2 underline cursor-pointer mr-2 flex items-center"}
+                        className={"ml-2 cursor-pointer mr-2 flex items-center"}
                         onClick={copyLobbyNumber}
                     >
                         {lobbyCode}
-                        <BiCopy color={'white'}/>
+                        <BiCopy color={'white'} className={"ml-1"}/>
                     </b>
                 </span>
                 <div>

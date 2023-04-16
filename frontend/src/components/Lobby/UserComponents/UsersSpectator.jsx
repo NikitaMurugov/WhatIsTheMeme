@@ -1,8 +1,7 @@
 import UserSpectator from "./UserSpectator";
-import PlusUser from "./PlusUser";
-import PlusUserSpecator from "./PlusUserSpecator";
+import PlusUserSpectator from "./PlusUserSpectator";
 
-const UsersSpectator = ({list, vizitor}) => {
+const UsersSpectator = ({list}) => {
     return <>
         <div className="w-fit">
             <div
@@ -12,7 +11,7 @@ const UsersSpectator = ({list, vizitor}) => {
                 }}
             >
                 {list.map((user, i) => <UserSpectator user={user} key={i + user.name} />)}
-                <PlusUserSpecator />
+                <PlusUserSpectator />
             </div>
 
         </div>

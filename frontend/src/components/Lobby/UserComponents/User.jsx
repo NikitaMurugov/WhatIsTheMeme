@@ -1,5 +1,4 @@
 import '../../../assets/css/user.css'
-import UserCards from "./UserCards";
 import { GiRoundStar } from "react-icons/gi";
 
 const User = ({user}) => {

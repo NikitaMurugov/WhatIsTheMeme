@@ -1,40 +1,57 @@
-import CustomLink from '../components/CustomLink';
-import { useState } from 'react';
-import Button from '../components/Button';
-import Input from '../components/Input';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Granim from 'granim';
 
-const lobbyCodeMask = [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-const App = () => {
-    const [lobbyCode, setLobbyCode] = useState();
-    const openModal = () => {
-        console.log('modal Opened!');
-    };
+import 'react-toastify/dist/ReactToastify.css';
+
+import Footer from '../components/Lobby/PageCompoents/Footer';
+
+import fakeUsers from '../helpers/fakeUserList';
+import Header from '../components/Lobby/PageCompoents/Header';
+
+function App() {
+    const [spectator, setSpectator] = useState(true);
+    const params = useParams();
+    const lobbyCode = params.code;
+    const users = fakeUsers;
+
+    useEffect(() => {
+        new Granim({
+            element: '#bg',
+            direction: 'left-right',
+            opacity: [1, 1],
+            states: {
+                'default-state': {
+                    gradients: [
+                        ['#232323', '#3d3d3d'],
+                        ['#3d3d3d', '#3b4364'],
+                        ['#363636', '#2f2f2f'],
+                        ['#2f2f2f', '#232323'],
+                        ['#2f324d', '#2f2f2f']
+                    ],
+                    transitionSpeed: 2000
+                }
+            }
+        });
+    }, []);
 
     return (
         <>
-            <div className="flex justify-center items-center h-full">
-                <div className="flex gap-4 flex-col w-64">
-                    <Button>
-                        <CustomLink onClick={openModal}> Создать лобби </CustomLink>
-                    </Button>
-                    <hr className="mt-3 mb-3 border-blue-400" />
-                    <div className="">
-                        <Button>
-                            <Input
-                                mask={lobbyCodeMask}
-                                placeholder={'____-____'}
-                                className={'h-16 p-4 w-full rounded mb-4 text-3xl text-center'}
-                                type="text"
-                                value={lobbyCode}
-                                onChange={(ev) => setLobbyCode(ev.target.value)}
-                            />
-                            <CustomLink to={`/lobby/${lobbyCode}`}> Подключиться к лобби </CustomLink>
-                        </Button>
+            <div className="App font-basic text-white">
+                <canvas id={'bg'}></canvas>
+                <Header lobbyCode={lobbyCode} spectator={spectator} setSpectator={setSpectator} />
+                <main className={'grid grid-cols-footer'}>
+                    <div></div>
+                    <div className={'flex flex-col items-center'}>
+                        <span className={'text-4xl flex justify-center'}>Какая-то фраза</span>
+                        <hr className={'w-1/2 m-10 h-1 border-none bg-gray-500 rounded'} />
                     </div>
-                </div>
+                    <div></div>
+                </main>
+                <Footer spectator={spectator} users={users} />
             </div>
         </>
     );
-};
+}
 
 export default App;

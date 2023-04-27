@@ -1,9 +1,11 @@
+import MaskedInput from 'react-text-mask';
 
-import MaskedInput from 'react-text-mask'
-const Input = ({mask, ...proops}) => {
-    return <>
-        <MaskedInput mask={mask} {...proops}/>
-    </>;
-}
+const Input = ({ mask, ...props }) => {
+    return (
+        <>
+            <MaskedInput mask={mask} {...props} />
+        </>
+    );
+};
 
 export default Input;

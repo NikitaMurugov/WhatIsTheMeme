@@ -1,11 +1,13 @@
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-const CustomLink = ({to, children, ...proops}) => {
-    return <>
-        <Link to={to} {...proops}>
-            { children }
-        </Link>
-    </>;
-}
+const CustomLink = ({ to, children, ...proops }) => {
+    return (
+        <>
+            <Link to={to} {...proops}>
+                {children}
+            </Link>
+        </>
+    );
+};
 
 export default CustomLink;

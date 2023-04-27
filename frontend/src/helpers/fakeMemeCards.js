@@ -1,20 +1,20 @@
-const fakeMemeCards =  [
+const fakeMemeCards = [
     {
         active: false,
-        img: '',
+        img: ''
     },
     {
         active: true,
-        img: '',
+        img: ''
     },
     {
         active: true,
-        img: '',
+        img: ''
     },
     {
         active: true,
-        img: '',
-    },
-]
+        img: ''
+    }
+];
 
 export default fakeMemeCards;

@@ -6,20 +6,20 @@ const fakeUsers = [
         cards: [
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
-            },
+                img: ''
+            }
         ]
     },
     {
@@ -29,20 +29,20 @@ const fakeUsers = [
         cards: [
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
-            },
+                img: ''
+            }
         ]
     },
     {
@@ -52,20 +52,20 @@ const fakeUsers = [
         cards: [
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
-            },
+                img: ''
+            }
         ]
     },
     {
@@ -75,20 +75,20 @@ const fakeUsers = [
         cards: [
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
-            },
+                img: ''
+            }
         ]
     },
     {
@@ -98,22 +98,22 @@ const fakeUsers = [
         cards: [
             {
                 active: true,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
+                img: ''
             },
             {
                 active: false,
-                img: '',
-            },
+                img: ''
+            }
         ]
-    },
-]
+    }
+];
 
 export default fakeUsers;

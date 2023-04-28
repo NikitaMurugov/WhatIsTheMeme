@@ -25,9 +25,10 @@ class LobbyFormRequest extends FormRequest
     {
         return [
             'creator' => ["string","required"],
-            'people_count' => ["integer", "min:2"],
+            'people_count' => ["integer", "min:2", "max:6"],
             'password' => ["string", 'nullable'],
-            'total_steps' => ["integer", 'nullable'],
+            'round_count' => ["integer", "min:3", "max:9"],
+            'round_time' => ["integer", "min:10", "max:80"],
         ];
     }
 

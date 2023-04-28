@@ -13,7 +13,8 @@ use Symfony\Component\Translation\Exception\NotFoundResourceException;
  * @property string $key
  * @property string $creator
  * @property int $people_count
- * @property int $total_steps
+ * @property int $round_count
+ * @property int $round_time
  */
 class Lobby extends Model
 {
@@ -42,7 +43,8 @@ class Lobby extends Model
         'people_count',
         'creator',
         'is_finished',
-        'total_steps',
+        'round_count',
+        'round_time',
     ];
 
     protected $appends = [

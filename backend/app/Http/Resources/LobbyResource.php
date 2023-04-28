@@ -9,7 +9,7 @@ use Illuminate\Support\Carbon;
 
 /**
  * @property integer $people_count
- * @property integer $total_steps
+ * @property integer $round_count
  *
  * @property string $creator
  * @property string $key
@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  *
  * @property LobbyStep $lastStep
  * @property string $created_at
+ * @property mixed $round_time
  */
 class LobbyResource extends JsonResource
 {
@@ -34,7 +35,8 @@ class LobbyResource extends JsonResource
             'creator' => $this->creator,
             'is_finished' => $this->is_finished,
             'last_step' => $this->lastStep?->step,
-            'total_steps' => $this->total_steps,
+            'round_count' => $this->round_count,
+            'round_time' => $this->round_time,
             'created_at' => Carbon::parse($this->created_at, config('app.timezone'))->format('d-m-Y H:i:s'),
         ];
     }

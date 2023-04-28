@@ -6,15 +6,12 @@ import Input from '../components/Input';
 const lobbyCodeMask = [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 const Index = () => {
     const [lobbyCode, setLobbyCode] = useState();
-    const openModal = () => {
-        console.log('modal Opened!');
-    };
 
     return (
         <div className="flex justify-center items-center h-full">
             <div className="flex gap-4 flex-col w-64">
                 <Button>
-                    <CustomLink onClick={openModal}> Создать лобби </CustomLink>
+                    <CustomLink to={'/lobby/'}> Создать лобби </CustomLink>
                 </Button>
                 <hr className="mt-3 mb-3 border-blue-400" />
                 <div className="">

@@ -1,16 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
-  theme: {
+export const content = ['./src/**/*.{html,js,jsx}'];
+export const theme = {
     extend: {
-      gridTemplateColumns: {
-        'footer': "200px auto 200px"
-      }
+        gridTemplateColumns: {
+            footer: '200px auto 200px'
+        }
     },
     fontFamily: {
-      'basic': ['RobotoSlab'],
+        basic: ['RobotoSlab']
     }
-  },
-  plugins: [],
-}
-
+};
+export const plugins = [];

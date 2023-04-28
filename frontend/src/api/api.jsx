@@ -1,9 +1,11 @@
-import axios from "axios";
-import { api_url } from "../helpers/config";
-const createLobby = async (people_count = 5, creator = "User") => {
+import axios from 'axios';
+import { api_url } from '../helpers/config';
+const createLobby = async (people_count = 5, creator = 'User') => {
     const response = await axios.post(api_url + 'create/lobby', {
         people_count,
-        creator,
+        creator
     });
     return await response.data;
-}
+};
+
+export { createLobby };

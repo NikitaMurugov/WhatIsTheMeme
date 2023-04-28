@@ -3,7 +3,6 @@
 namespace App\Events;
 
 use App\Models\Lobby;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -11,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class LobbyCreated
+class EnterToLobby implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -23,16 +22,21 @@ class LobbyCreated
     {
         $this->lobby = $lobby;
     }
-
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return array<int, Channel>
+     * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn(): array
+    public function broadcastOn()
     {
         return [
-            new PrivateChannel('channel-name'),
+            new PresenceChannel('Lobby.' .  $this->lobby->key)
         ];
     }
+
+    public function broadcastAs()
+    {
+        return 'Lobby';
+    }
+
 }

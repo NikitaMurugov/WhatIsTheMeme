@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('Lobby.{lobby}', LobbyChannel::class);
+Broadcast::routes();
+Broadcast::channel('lobby.{lobby}', LobbyChannel::class);

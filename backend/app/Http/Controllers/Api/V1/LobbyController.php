@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Events\EnterToLobby;
 use App\Events\LobbyCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LobbyFormRequest;
@@ -18,12 +19,16 @@ class LobbyController extends Controller
         $data['key'] = Lobby::makeUniqueKey();
 
         $lobby = Lobby::create($data);
-
-        broadcast(new LobbyCreated($lobby));
-        return new LobbyResource($lobby);
+        if ($lobby) {
+            return response()->json([
+                'key' => $lobby->key
+            ]);
+        }
     }
+
     public function show(Lobby $lobby)
     {
+        broadcast(new EnterToLobby($lobby));
         return new LobbyResource($lobby);
     }
 }

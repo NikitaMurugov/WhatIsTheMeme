@@ -1,7 +1,8 @@
-<?php
+  <?php
 
 use App\Http\Controllers\Api\V1\DataController;
-use App\Http\Controllers\AuthController;
+  use App\Http\Controllers\Api\V1\LobbyController;
+  use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,10 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['middleware' => 'guest'], function () {
-    Route::get('/data', [DataController::class, 'index'])->name('data');
-});
-
-Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('/data/secure',  [DataController::class, 'secureIndex'])->name('data.secure');
+//Route::group(['middleware' => 'guest'], function () {
+//    Route::get('/data', [DataController::class, 'index'])->name('data');
+//});
+//
+//Route::group(['middleware' => 'auth:sanctum'], function () {
+//    Route::get('/data/secure',  [DataController::class, 'secureIndex'])->name('data.secure');
+//});
+Route::controller(LobbyController::class)->group(function () {
+    Route::post('/lobby/create', 'create');
 });

@@ -1,6 +1,7 @@
 import App from '../pages/App';
 import Index from '../pages/Index';
 import Lobby from '../pages/Lobby';
+
 const routes = [
     {
         path: '/',

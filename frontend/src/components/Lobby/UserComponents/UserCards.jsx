@@ -9,5 +9,4 @@ const UserCards = ({ cards }) => {
         </>
     );
 };
-
 export default UserCards;

@@ -9,5 +9,4 @@ const CustomLink = ({ to, children, ...proops }) => {
         </>
     );
 };
-
 export default CustomLink;

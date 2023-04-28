@@ -7,5 +7,4 @@ const Input = ({ mask, ...props }) => {
         </>
     );
 };
-
 export default Input;

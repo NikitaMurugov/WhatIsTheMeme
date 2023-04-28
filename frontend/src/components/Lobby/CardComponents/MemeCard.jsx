@@ -1,4 +1,5 @@
 import { BiImage } from 'react-icons/bi';
+
 const MemeCard = ({ card }) => {
     return (
         <>
@@ -17,5 +18,4 @@ const MemeCard = ({ card }) => {
         </>
     );
 };
-
 export default MemeCard;

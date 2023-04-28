@@ -10,7 +10,6 @@ const Footer = ({ spectator, users }) => {
             </footer>
         </>
     );
-
     const Footer = (
         <>
             <footer className={'grid grid-cols-footer absolute bottom-0 w-full p-10'}>
@@ -22,8 +21,6 @@ const Footer = ({ spectator, users }) => {
             </footer>
         </>
     );
-
     return spectator ? SpectatorFooter : Footer;
 };
-
 export default Footer;

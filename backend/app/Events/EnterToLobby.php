@@ -29,14 +29,12 @@ class EnterToLobby implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return [
-            new PresenceChannel('Lobby.' .  $this->lobby->key)
-        ];
+        return new PresenceChannel('lobby.' .  $this->lobby->key);
     }
 
     public function broadcastAs()
     {
-        return 'Lobby';
+        return 'lobby';
     }
 
 }

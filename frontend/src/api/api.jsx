@@ -7,5 +7,10 @@ const createLobby = async (people_count = 5, creator = 'User') => {
     });
     return await response.data;
 };
+const getLobby = async (code) => {
+    const response = await axios.get(`create/lobby/${code}`, );
+    return await response.data;
+};
 
 export { createLobby };
+export { getLobby };

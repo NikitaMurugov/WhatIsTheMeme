@@ -1,10 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '../components/Button';
+// import {createLobby} from "../api/api";
 
 function Lobby() {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        // const result = createLobby();
+        console.log(data);
+    };
 
     return (
         <div className="flex justify-center items-center h-full">

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('key')->unique();
             $table->integer('people_count')->default(4);
             $table->string('creator')->default('Anonymus');
+            $table->string('password')->nullable();
             $table->boolean('is_finished')->default(false);
             $table->timestamps();
         });

@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Log;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,12 +28,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Lobby::creating(function (Lobby $lobby) {
-            LobbyStep::create([
-                'lobby_id' => $lobby->id,
-                'stage' => Lobby::STEP_BEGIN,
-            ]);
-        });
     }
 
     /**

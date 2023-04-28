@@ -18,7 +18,7 @@ class LobbyStepResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'stage' => $this->stage,
+            'step' => $this->step,
         ];
     }
 }

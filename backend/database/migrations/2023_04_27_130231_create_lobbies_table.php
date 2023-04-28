@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('creator')->default('Anonymus');
             $table->string('password')->nullable();
             $table->boolean('is_finished')->default(false);
+            $table->integer('total_steps')->default(4);
             $table->timestamps();
         });
     }

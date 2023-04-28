@@ -7,16 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LobbyFormRequest;
 use App\Http\Resources\LobbyResource;
 use App\Models\Lobby;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class LobbyController extends Controller
 {
     public function create(LobbyFormRequest $request)
     {
-        $lobby = Lobby::query()
-            ->create($request->validated());
+        $data = $request->validated();
+        $data['key'] = Lobby::makeUniqueKey();
+
+        $lobby = Lobby::create($data);
 
         broadcast(new LobbyCreated($lobby));
-
         return new LobbyResource($lobby);
     }
     public function show(Lobby $lobby)

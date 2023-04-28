@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LobbyFormRequest extends FormRequest
 {
@@ -13,11 +16,10 @@ class LobbyFormRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     * @return array<string, Rule|array|string>
      */
     public function rules(): array
     {
@@ -25,6 +27,22 @@ class LobbyFormRequest extends FormRequest
             'creator' => ["string","required"],
             'people_count' => ["integer", "min:2"],
             'password' => ["string", 'nullable'],
+            'total_steps' => ["integer", 'nullable'],
         ];
     }
+
+
+    /**
+     * @param Validator $validator
+     * @return mixed
+     */
+    public function failedValidation(Validator $validator): mixed
+    {
+        throw new HttpResponseException(response()->json([
+            'success'   => false,
+            'message'   => 'Validation errors',
+            'data'      => $validator->errors()
+        ]));
+    }
+
 }

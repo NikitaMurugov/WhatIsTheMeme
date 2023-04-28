@@ -41,7 +41,7 @@ class Lobby extends Model
     protected $fillable = [
         'key',
         'people_count',
-        'creator',
+        'creator_id',
         'is_finished',
         'round_count',
         'round_time',
@@ -54,6 +54,10 @@ class Lobby extends Model
     public function steps(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(LobbyStep::class);
+    }
+    public function players(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(LobbyPlayer::class);
     }
 
     /**

@@ -8,12 +8,24 @@ import Footer from '../components/Lobby/PageCompoents/Footer';
 
 import fakeUsers from '../helpers/fakeUserList';
 import Header from '../components/Lobby/PageCompoents/Header';
+import { enterLobby } from '../hooks/socketHook';
 
 function App() {
     const [spectator, setSpectator] = useState(true);
     const params = useParams();
     const lobbyCode = params.code;
     const users = fakeUsers;
+    const joinSocket = (ev) => {
+        console.log(ev, 'you are well come');
+    };
+    const newUserJoin = (ev) => {
+        console.log(ev, 'NEW USER JOIN');
+    };
+    const userLeaveJoin = (ev) => {
+        console.log(ev, 'USER LEAVE THE CHANNEL');
+    };
+
+    enterLobby(lobbyCode, joinSocket, newUserJoin, userLeaveJoin);
 
     useEffect(() => {
         new Granim({

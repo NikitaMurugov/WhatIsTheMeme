@@ -19,5 +19,4 @@ const Users = ({ list }) => {
         </>
     );
 };
-
 export default Users;

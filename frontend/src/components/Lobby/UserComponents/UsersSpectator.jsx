@@ -19,5 +19,4 @@ const UsersSpectator = ({ list }) => {
         </>
     );
 };
-
 export default UsersSpectator;

@@ -27,5 +27,4 @@ const UserSpectator = ({ user }) => {
         </>
     );
 };
-
 export default UserSpectator;

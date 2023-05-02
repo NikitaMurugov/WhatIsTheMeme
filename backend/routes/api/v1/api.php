@@ -24,3 +24,7 @@ Route::group(['prefix' => '/lobby'],function () {
     Route::post('/create', [LobbyController::class, 'create']);
     Route::get('/{lobby}',  [LobbyController::class, 'show']);
 });
+
+Route::post('broadcasting/init', function () {
+    return true;
+});

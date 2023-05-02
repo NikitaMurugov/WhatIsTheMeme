@@ -9,11 +9,10 @@ export function createSocketConnection() {
     if (!window.Echo) {
         window.Echo = new Echo({
             broadcaster: 'pusher',
-            port: 8000,
-            authEndpoint: `${config.backend_url}broadcasting/auth`,
+            authEndpoint: `${config.api_url}broadcasting/init`,
             key: process.env.REACT_APP_PUSHER_KEY,
             cluster: process.env.REACT_APP_PUSHER_CLUSTER
-            // forceTLS: true
+            // forceTLS: false
         });
     }
 }

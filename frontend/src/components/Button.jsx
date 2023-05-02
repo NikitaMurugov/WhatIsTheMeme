@@ -10,5 +10,4 @@ const Button = ({ children, ...proops }) => {
         </>
     );
 };
-
 export default Button;

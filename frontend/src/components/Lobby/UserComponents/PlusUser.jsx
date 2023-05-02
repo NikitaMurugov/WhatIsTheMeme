@@ -1,5 +1,6 @@
 import '../../../assets/css/user.css';
 import { RxPlusCircled } from 'react-icons/rx';
+
 const PlusUser = ({ onClick }) => {
     return (
         <>
@@ -16,5 +17,4 @@ const PlusUser = ({ onClick }) => {
         </>
     );
 };
-
 export default PlusUser;

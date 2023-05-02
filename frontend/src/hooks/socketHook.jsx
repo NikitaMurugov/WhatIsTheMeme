@@ -12,6 +12,7 @@ import { createSocketConnection } from '../services/socketService';
 // }
 function join(channel, callBack, joiningCallBack, leavingCallBack) {
     window.Echo.join(channel)
+        .here((e) => joiningCallBack(e))
         .joining((e) => joiningCallBack(e))
         .leaving((e) => leavingCallBack(e));
     return function echo() {

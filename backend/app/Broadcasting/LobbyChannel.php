@@ -3,7 +3,6 @@
 namespace App\Broadcasting;
 
 use App\Models\Lobby;
-use App\Models\User;
 use Illuminate\Support\Facades\Log;
 
 class LobbyChannel
@@ -23,7 +22,6 @@ class LobbyChannel
      */
     public function join(Lobby $lobby): array|bool
     {
-        Log::info($lobby);
-        return $lobby && !$lobby->is_finished;
+        return !!$lobby && !$lobby->is_finished;
     }
 }

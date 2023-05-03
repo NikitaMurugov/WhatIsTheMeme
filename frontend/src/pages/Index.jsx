@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
-const lobbyCodeMask = [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+const lobbyCodeMask = [/./, /./, /./, /./, '-', /./, /./, /./, /./];
 const Index = () => {
     const [lobbyCode, setLobbyCode] = useState();
 

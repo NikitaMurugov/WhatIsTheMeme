@@ -2,11 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '../components/Button';
 import { createLobby } from '../api/lobby';
+import { useNavigate } from 'react-router-dom';
 
 function Lobby() {
+    const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {
-        createLobby(data);
+    const onSubmit = async (data) => {
+        const lobbyKey = await createLobby(data);
+        navigate(`${lobbyKey}`);
     };
 
     return (
@@ -14,6 +17,19 @@ function Lobby() {
             <div className="flex gap-4 flex-col">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-wrap mb-3">
+                        <div className="flex w-full mb-3">
+                            <div className="text-blue-900 bg-blue-400 w-full rounded mr-2">
+                                <label className="p-3">
+                                    Имя пользователя
+                                    <input
+                                        {...register('creator')}
+                                        className="h-14 p-4 w-full rounded text-3xl text-center"
+                                        type="text"
+                                        defaultValue={'username'}
+                                    />
+                                </label>
+                            </div>
+                        </div>
                         <div className="flex w-full mb-3">
                             <div className="text-blue-900 bg-blue-400 w-full rounded mr-2">
                                 <label className="p-3">

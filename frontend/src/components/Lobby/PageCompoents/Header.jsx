@@ -2,8 +2,10 @@ import { BiCopy } from 'react-icons/bi';
 import { FaRegEye } from 'react-icons/fa';
 import { CgGames } from 'react-icons/cg';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-const Header = ({ lobbyCode, setSpectator, spectator }) => {
+const Header = ({ lobbyCode, setSpectator, spectator, lobbyData }) => {
+    const navigate = useNavigate();
     const copyLobbyNumber = () => {
         navigator.clipboard.writeText(lobbyCode);
         toast('Код лобби скопирован!', {
@@ -44,6 +46,11 @@ const Header = ({ lobbyCode, setSpectator, spectator }) => {
                             }}
                         />
                     </div>
+                    <div>
+                        <button className="bg-slate-300 rounded p-3 text-black" onClick={() => navigate('/')}>
+                            Вернуться на главную
+                        </button>
+                    </div>
                 </div>
                 <div className={' header__user-role flex flex-col items-center'}>
                     {spectator ? (
@@ -60,11 +67,11 @@ const Header = ({ lobbyCode, setSpectator, spectator }) => {
                 </div>
                 <div className={'flex flex-col items-end gap-4'}>
                     <div className="">
-                        хозяин лобби: <b>Вася пук</b>
+                        хозяин лобби: <b>{lobbyData?.creator}</b>
                     </div>
                     <div className="flex items-center">
                         <div className={'w-8 text-center bg-gray-600 mr-2 rounded'}> 1</div>/
-                        <div className={'w-8 text-center bg-blue-600 ml-2 rounded'}> 4 </div>
+                        <div className={'w-8 text-center bg-blue-600 ml-2 rounded'}> {lobbyData?.round_count} </div>
                     </div>
                 </div>
             </header>

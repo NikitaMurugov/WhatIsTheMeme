@@ -5,8 +5,4 @@ import './assets/css/index.css';
 import Router from './routes/Router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <Router />
-    </React.StrictMode>
-);
+root.render(<Router />);

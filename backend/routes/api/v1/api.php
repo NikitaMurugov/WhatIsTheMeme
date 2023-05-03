@@ -28,3 +28,4 @@ Route::group(['prefix' => '/lobby'],function () {
 Route::post('broadcasting/init', function () {
     return true;
 });
+Route::post('/send', 'App\Http\Controllers\MessageController@send');

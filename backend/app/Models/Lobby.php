@@ -41,7 +41,8 @@ class Lobby extends Model
     protected $fillable = [
         'key',
         'people_count',
-        'creator_id',
+        'creator',
+        'password',
         'is_finished',
         'round_count',
         'round_time',
@@ -77,7 +78,7 @@ class Lobby extends Model
     public static function makeUniqueKey()
     {
         $code = self::createUniqueCode(self::KEY_LENGHT);
-        return implode('-', str_split($code, self::KEY_LENGHT/2));
+        return implode('-', str_split($code, self::KEY_LENGHT / 2));
     }
     public static function createUniqueCode($limit)
     {
@@ -87,6 +88,7 @@ class Lobby extends Model
     public static function create($data)
     {
         $model = self::query()->create($data);
+
         return self::find($model->key);
     }
 

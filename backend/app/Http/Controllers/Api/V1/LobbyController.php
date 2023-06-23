@@ -17,8 +17,8 @@ class LobbyController extends Controller
     {
         $data = $request->validated();
         $data['key'] = Lobby::makeUniqueKey();
-
         $lobby = Lobby::create($data);
+        
         if ($lobby) {
             return response()->json([
                 'key' => $lobby->key
